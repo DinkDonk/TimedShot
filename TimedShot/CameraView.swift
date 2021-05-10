@@ -89,7 +89,6 @@ struct CameraView_Previews: PreviewProvider {
 
 class CameraModel: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate {
 	@Published var session = AVCaptureSession()
-	@Published var preview: AVCaptureVideoPreviewLayer!
 	@Published var videoOutput = AVCaptureMovieFileOutput()
 	
 	var shooting = false
@@ -153,12 +152,15 @@ class CameraModel: NSObject, ObservableObject, AVCaptureFileOutputRecordingDeleg
 		}
 		
 		let audioOutput = AVCaptureAudioDataOutput()
+		let metadataOutput = AVCaptureMetadataOutput()
 		
 		guard self.session.canAddOutput(videoOutput) else { return }
 		guard self.session.canAddOutput(audioOutput) else { return }
+		guard self.session.canAddOutput(metadataOutput) else { return }
 		
 		self.session.addOutput(videoOutput)
 		self.session.addOutput(audioOutput)
+		self.session.addOutput(metadataOutput)
 		
 		self.session.commitConfiguration()
 		
@@ -168,7 +170,7 @@ class CameraModel: NSObject, ObservableObject, AVCaptureFileOutputRecordingDeleg
 			videoOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc], for: videoOutput.connection(with: .video)!)
 		}
 		
-		videoOutput.connection(with: .video)!.videoOrientation = .landscapeLeft
+		videoOutput.connection(with: .video)!.videoOrientation = .landscapeRight
 	}
 	
 	// Started recording
@@ -258,6 +260,7 @@ class MyView: UIView {
 			self.videoPreviewLayer.session = self.captureSession
 			self.videoPreviewLayer.videoGravity = .resizeAspect
 			self.captureSession?.startRunning()
+			self.videoPreviewLayer.transform = CATransform3DMakeRotation(CGFloat(-90.0 / 180.0 * .pi), 0.0, 0.0, 1.0)
 		} else {
 			self.captureSession?.stopRunning()
 		}
@@ -265,10 +268,10 @@ class MyView: UIView {
 }
 
 struct CameraPreview: UIViewRepresentable {
-	@ObservedObject var camera: CameraModel
+	@StateObject var camera: CameraModel
 	
 	func makeUIView(context: Context) -> MyView {
-		MyView(session: camera.session)
+		return MyView(session: camera.session)
 	}
 	
 	func updateUIView(_ uiView: UIViewType, context: Context) {

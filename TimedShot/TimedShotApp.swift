@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Intents
+import Photos
 
 @main
 struct TimedShotApp: App {
@@ -39,6 +40,10 @@ struct TimedShotApp: App {
             INPreferences.requestSiriAuthorization({ status in
                 // Handle errors here
             })
+			
+			PHPhotoLibrary.requestAuthorization({ status in
+				// Handle errors here
+			})
             
             makeDonation()
 		}

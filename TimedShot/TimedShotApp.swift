@@ -17,6 +17,7 @@ struct TimedShotApp: App {
         let intent = ShootIntent()
         
         intent.suggestedInvocationPhrase = "Shoot for 15 seconds"
+		intent.duration = 15
         
         let interaction = INInteraction(intent: intent, response: nil)
         

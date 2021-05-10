@@ -24,7 +24,7 @@
 			<key>INIntentDescription</key>
 			<string>Make a timed shot</string>
 			<key>INIntentDescriptionID</key>
-			<string>HJfHDF</string>
+			<string>KWR01c</string>
 			<key>INIntentLastParameterTag</key>
 			<integer>2</integer>
 			<key>INIntentManagedParameterCombinations</key>
@@ -36,7 +36,7 @@
 					<key>INIntentParameterCombinationTitle</key>
 					<string>Shoot for ${duration}</string>
 					<key>INIntentParameterCombinationTitleID</key>
-					<string>IZGR2t</string>
+					<string>6RTeOd</string>
 					<key>INIntentParameterCombinationUpdatesLinked</key>
 					<true/>
 				</dict>
@@ -45,6 +45,17 @@
 			<string>Shoot</string>
 			<key>INIntentParameterCombinations</key>
 			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Make bread for </string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>7Qfeh9</string>
+				</dict>
 				<key>duration</key>
 				<dict>
 					<key>INIntentParameterCombinationIsLinked</key>
@@ -54,7 +65,7 @@
 					<key>INIntentParameterCombinationTitle</key>
 					<string>Shoot for ${duration}</string>
 					<key>INIntentParameterCombinationTitleID</key>
-					<string>7A3Xdg</string>
+					<string>7f0XEO</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
@@ -65,7 +76,7 @@
 					<key>INIntentParameterDisplayName</key>
 					<string>Duration</string>
 					<key>INIntentParameterDisplayNameID</key>
-					<string>MDtram</string>
+					<string>saOeGi</string>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterMetadata</key>
@@ -76,10 +87,13 @@
 						<real>15</real>
 						<key>INIntentParameterMetadataMaximumUnit</key>
 						<string>Days</string>
+						<key>INIntentParameterMetadataMaximumValue</key>
+						<data>
+						</data>
 						<key>INIntentParameterMetadataMinimumUnit</key>
 						<string>Seconds</string>
 						<key>INIntentParameterMetadataMinimumValue</key>
-						<real>5</real>
+						<real>10</real>
 						<key>INIntentParameterMetadataUnit</key>
 						<string>Seconds</string>
 					</dict>
@@ -99,7 +113,7 @@
 							<key>INIntentParameterPromptDialogFormatString</key>
 							<string>For how long?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>avrHp9</string>
+							<string>mMuZDB</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Primary</string>
 						</dict>
@@ -120,7 +134,7 @@
 						<key>INIntentResponseCodeFormatString</key>
 						<string>That's a wrap!</string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>FPUagt</string>
+						<string>MPsF6e</string>
 						<key>INIntentResponseCodeName</key>
 						<string>success</string>
 						<key>INIntentResponseCodeSuccess</key>
@@ -130,16 +144,18 @@
 						<key>INIntentResponseCodeFormatString</key>
 						<string>Could not shoot video</string>
 						<key>INIntentResponseCodeFormatStringID</key>
-						<string>3Jxtd1</string>
+						<string>ZXiaBv</string>
 						<key>INIntentResponseCodeName</key>
 						<string>failure</string>
 					</dict>
 				</array>
+				<key>INIntentResponseLastParameterTag</key>
+				<integer>1</integer>
 			</dict>
 			<key>INIntentTitle</key>
 			<string>Shoot</string>
 			<key>INIntentTitleID</key>
-			<string>DeWxPZ</string>
+			<string>Wd6OzR</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentVerb</key>

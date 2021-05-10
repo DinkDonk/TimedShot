@@ -14,5 +14,6 @@ Timed Shot is an iOS app that interacts with Siri to make timed video.
 
 ### Known Issues
 
-Camera preview is not at the correct orientation.
+- Camera preview is not at the correct orientation.
+- Absolutely not production ready
 

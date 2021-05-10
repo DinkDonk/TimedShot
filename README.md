@@ -1,7 +1,7 @@
-Timed Shot
-==========
+TimedShot
+=========
 
-Timed Shot is an iOS app that interacts with Siri to make timed video.
+**TimedShot** is an iOS app that interacts with Siri to make timed video.
 
 ### Usage
 

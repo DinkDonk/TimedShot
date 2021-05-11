@@ -18,13 +18,13 @@ class TimerHelper: ObservableObject {
 struct CameraView: View {
 	@StateObject var camera = CameraModel()
 	@StateObject var timerHelper = TimerHelper()
-
+	
 	let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
+	
 	var body: some View {
 		ZStack {
 			CameraPreview(camera: camera)
-
+			
 			Text("\(timerHelper.timeRemaining)")
 				.font(Font.system(size: 100))
 				.foregroundColor(.white)
@@ -44,7 +44,7 @@ struct CameraView: View {
 			if (timerHelper.timerRunning && timerHelper.timeRemaining > 0) {
 				timerHelper.timeRemaining -= 1
 			}
-
+			
 			if (timerHelper.timeRemaining == 0) {
 				stop()
 			}
@@ -61,7 +61,7 @@ struct CameraView: View {
 		timerHelper.timerRunning = false
 		camera.videoOutput.stopRecording()
 	}
-
+	
 	func shoot(duration: Int) {
 		if (self.timerHelper.timerRunning) {
 			print("Already shooting!")
@@ -70,13 +70,13 @@ struct CameraView: View {
 		}
 		
 		print("Shooting for \(duration)")
-
+		
 		self.timerHelper.timeRemaining = duration
 		self.timerHelper.timerRunning = true
 		
 		let outputFileName = NSUUID().uuidString
 		let outputFilePath = (NSTemporaryDirectory() as NSString).appendingPathComponent((outputFileName as NSString).appendingPathExtension("mov")!)
-
+		
 		camera.videoOutput.startRecording(to: URL(fileURLWithPath: outputFilePath), recordingDelegate: camera)
 	}
 }
@@ -210,7 +210,7 @@ class CameraModel: NSObject, ObservableObject, AVCaptureFileOutputRecordingDeleg
 					PHPhotoLibrary.shared().performChanges({
 						let options = PHAssetResourceCreationOptions()
 						options.shouldMoveFile = true
-
+						
 						let creationRequest = PHAssetCreationRequest.forAsset()
 						creationRequest.addResource(with: .video, fileURL: outputFileURL, options: options)
 					}, completionHandler: { success, error in
@@ -235,7 +235,7 @@ class CameraModel: NSObject, ObservableObject, AVCaptureFileOutputRecordingDeleg
 
 class MyView: UIView {
 	private var captureSession: AVCaptureSession?
-
+	
 	init(session: AVCaptureSession) {
 		super.init(frame: .zero)
 		self.captureSession = session
@@ -255,7 +255,7 @@ class MyView: UIView {
 	
 	override func didMoveToSuperview() {
 		super.didMoveToSuperview()
-
+		
 		if nil != self.superview {
 			self.videoPreviewLayer.session = self.captureSession
 			self.videoPreviewLayer.videoGravity = .resizeAspect

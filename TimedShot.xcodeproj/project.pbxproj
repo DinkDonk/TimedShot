@@ -401,6 +401,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TimedShot/TimedShot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "TimedShot/Preview\\ Content";
 				DEVELOPMENT_TEAM = UUG3WHTUZF;
 				ENABLE_PREVIEWS = YES;
@@ -410,7 +411,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dinkdonk.TimedShot;
+				PRODUCT_BUNDLE_IDENTIFIER = no.dinkdonk.TimedShot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -425,6 +426,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TimedShot/TimedShot.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "TimedShot/Preview\\ Content";
 				DEVELOPMENT_TEAM = UUG3WHTUZF;
 				ENABLE_PREVIEWS = YES;
@@ -434,7 +436,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dinkdonk.TimedShot;
+				PRODUCT_BUNDLE_IDENTIFIER = no.dinkdonk.TimedShot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,6 +448,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TimedShotIntent/TimedShotIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UUG3WHTUZF;
 				INFOPLIST_FILE = TimedShotIntent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,7 +456,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dinkdonk.TimedShot.TimedShotIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = no.dinkdonk.TimedShot.TimedShotIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -466,6 +469,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TimedShotIntent/TimedShotIntent.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = UUG3WHTUZF;
 				INFOPLIST_FILE = TimedShotIntent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,7 +477,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dinkdonk.TimedShot.TimedShotIntent;
+				PRODUCT_BUNDLE_IDENTIFIER = no.dinkdonk.TimedShot.TimedShotIntent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

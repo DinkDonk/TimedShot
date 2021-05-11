@@ -11,42 +11,42 @@ import Photos
 
 @main
 struct TimedShotApp: App {
-    @Environment(\.scenePhase) private var scenePhase
-    
-    func makeDonation() {
-        let intent = ShootIntent()
-        
-        intent.suggestedInvocationPhrase = "Shoot for 15 seconds"
+	@Environment(\.scenePhase) private var scenePhase
+	
+	func makeDonation() {
+		let intent = ShootIntent()
+		
+		intent.suggestedInvocationPhrase = "Shoot for 15 seconds"
 		intent.duration = 15
-        
-        let interaction = INInteraction(intent: intent, response: nil)
-        
-        interaction.donate { error in
-            if error != nil {
-                if let error = error as NSError? {
-                    print(
-                     "Donation failed: %@" + error.localizedDescription)
-                }
-            } else {
+		
+		let interaction = INInteraction(intent: intent, response: nil)
+		
+		interaction.donate { error in
+			if error != nil {
+				if let error = error as NSError? {
+					print(
+						"Donation failed: %@" + error.localizedDescription)
+				}
+			} else {
 				print("Successfully donated interaction " + intent.suggestedInvocationPhrase!)
-            }
-        }
-    }
-    
-    var body: some Scene {
+			}
+		}
+	}
+	
+	var body: some Scene {
 		WindowGroup {
 			CameraView()
-        }
-        .onChange(of: scenePhase) { phase in
-            INPreferences.requestSiriAuthorization({ status in
-                // Handle errors here
-            })
+		}
+		.onChange(of: scenePhase) { phase in
+			INPreferences.requestSiriAuthorization({ status in
+				// Handle errors here
+			})
 			
 			PHPhotoLibrary.requestAuthorization({ status in
 				// Handle errors here
 			})
-            
-            makeDonation()
+			
+			makeDonation()
 		}
-    }
+	}
 }
